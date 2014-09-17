@@ -56,6 +56,7 @@ static const NSString *API_KEY = @"7t9jf6ya8gbfzxryv9ty3gdh";
 
 -(void) handleRefresh
 {
+    self.errorLabel.hidden=YES;
     [self loadData];
 }
 
@@ -64,12 +65,13 @@ static const NSString *API_KEY = @"7t9jf6ya8gbfzxryv9ty3gdh";
     if (!_moviesDict) {
         self.tableView.contentOffset = CGPointMake(0, -_refreshControl.frame.size.height);
         [_refreshControl beginRefreshing];
+        [self loadData];
     }
 }
 
 -(void) initErrorLabel
 {
-        CGRect labelFrame = CGRectMake(0, 34, 320, 30);
+    CGRect labelFrame = CGRectMake(0, 0, 320, 30);
     UILabel* label = [[UILabel alloc] initWithFrame:labelFrame];
     [label setBackgroundColor:[UIColor redColor]];
     label.textColor=[UIColor whiteColor];
@@ -91,6 +93,8 @@ static const NSString *API_KEY = @"7t9jf6ya8gbfzxryv9ty3gdh";
 
 - (void) loadData
 {
+    self.errorLabel.hidden=YES;
+
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_url]];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -109,29 +113,31 @@ static const NSString *API_KEY = @"7t9jf6ya8gbfzxryv9ty3gdh";
 - (void)showError
 {
     self.errorLabel.hidden = NO;
-    self.errorLabel.frame = CGRectMake(0, 34, 320, 30);
+    self.errorLabel.frame = CGRectMake(0, -34, 320, 30);
 
     [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^
     {
-        self.errorLabel.frame  = CGRectMake(0, 64, 320,30);
+        self.errorLabel.frame  = CGRectMake(0, 0, 320,30);
     } completion:^(BOOL finished) {
         
     }];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell setBackgroundColor:UIColorFromRGB(0xE2E7F4)];
+}
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MovieDetailControllerViewController* detail = [MovieDetailControllerViewController new];
     detail.movieDict = _moviesDict[indexPath.row];
     detail.hidesBottomBarWhenPushed = YES;
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     [self.navigationController pushViewController:detail animated:true];
 }
-
-- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    return true;
-}
-
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -154,7 +160,8 @@ static const NSString *API_KEY = @"7t9jf6ya8gbfzxryv9ty3gdh";
         cell.posterView.alpha=1;
     }];
     
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+    cell.selectedBackgroundView.backgroundColor = [UIColor greenColor];
     
     return cell;
 }
