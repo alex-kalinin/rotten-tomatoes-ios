@@ -6,7 +6,7 @@ Time spent: 5 hours.
 
 http://courses.codepath.com/courses/intro_to_ios/week/1#!module
 
-### Implemented stories
+## Implemented stories
 
 #### Required
 * User can view a list of movies from Rotten Tomatoes. Poster images must be loading asynchronously.
@@ -25,7 +25,7 @@ http://courses.codepath.com/courses/intro_to_ios/week/1#!module
 * Must use Cocoapods.
 * Asynchronous image downloading must be implemented using the UIImageView category in the AFNetworking library.
 
-### Remain
+## Remain
 * All images should be cached in memory and disk. In other words, images load immediately upon cold start (optional).
 * Customize the highlight and selection effect of the cell. (optional)
 * Add a search bar. (optional)
