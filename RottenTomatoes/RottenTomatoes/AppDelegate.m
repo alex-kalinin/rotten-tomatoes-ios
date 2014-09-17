@@ -32,7 +32,7 @@
     moviesNv.tabBarItem.image=[UIImage imageNamed:@"tab_bar_box"];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[nv, moviesNv];
+    tabBarController.viewControllers = @[moviesNv, nv];
     
     self.window.rootViewController = tabBarController;
     

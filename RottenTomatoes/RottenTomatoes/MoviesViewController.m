@@ -120,13 +120,12 @@ static const NSString *API_KEY = @"7t9jf6ya8gbfzxryv9ty3gdh";
 }
 
 
--(void) tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MovieDetailControllerViewController* detail = [MovieDetailControllerViewController new];
     detail.movieDict = _moviesDict[indexPath.row];
     detail.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detail animated:true];
-    NSLog(@"Select!");
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -143,10 +142,8 @@ static const NSString *API_KEY = @"7t9jf6ya8gbfzxryv9ty3gdh";
 {
     NSDictionary* movie = _moviesDict[indexPath.row];
     
-//    NSLog(@"index path: %ld", indexPath.row);
     MovieCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
 
-//    cell.textLabel.text = [NSString stringWithFormat:@"I'm a row # %i", (int) indexPath.row];
     cell.titleLabel.text = movie[@"title"];
     cell.descriptionView.text = movie[@"synopsis"];
     cell.mpaaRating.text = [NSString stringWithFormat:@"%@, %@ min", movie[@"mpaa_rating"], movie[@"runtime"]];
