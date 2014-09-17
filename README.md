@@ -1,10 +1,8 @@
 Rotten Tomatoes client 
 ===================
-CodePath, Week 1
-
 Time spent: 5 hours.
 
-http://courses.codepath.com/courses/intro_to_ios/week/1#!module
+CodePath, Week 1. http://courses.codepath.com/courses/intro_to_ios/week/1#!module
 
 ## Implemented stories
 
