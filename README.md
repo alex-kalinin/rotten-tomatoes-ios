@@ -18,6 +18,7 @@ CodePath, Week 1. http://courses.codepath.com/courses/intro_to_ios/week/1#!modul
 * For the large poster, load the low-res image first, switch to high-res when complete 
 * Customize the navigation bar.
 * Add a tab bar for Box Office and DVD.
+* Customize the highlight and selection effect of the cell.
 
 #### Additional requirements
 * Must use Cocoapods.
@@ -25,5 +26,4 @@ CodePath, Week 1. http://courses.codepath.com/courses/intro_to_ios/week/1#!modul
 
 ## Remain optional (3 of 7)
 * All images should be cached in memory and disk. In other words, images load immediately upon cold start (optional).
-* Customize the highlight and selection effect of the cell. (optional)
 * Add a search bar. (optional)
