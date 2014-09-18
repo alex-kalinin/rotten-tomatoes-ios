@@ -136,6 +136,9 @@ static const NSString *API_KEY = @"7t9jf6ya8gbfzxryv9ty3gdh";
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.selectedBackgroundView.backgroundColor = [UIColor greenColor];
+
     [self.navigationController pushViewController:detail animated:true];
 }
 
@@ -161,7 +164,6 @@ static const NSString *API_KEY = @"7t9jf6ya8gbfzxryv9ty3gdh";
     }];
     
     cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-    cell.selectedBackgroundView.backgroundColor = [UIColor greenColor];
     
     return cell;
 }
