@@ -1,6 +1,6 @@
 Rotten Tomatoes client 
 ===================
-Time spent: 5 hours.
+Time spent: 6 hours.
 
 CodePath, Week 1. http://courses.codepath.com/courses/intro_to_ios/week/1#!module
 
@@ -13,7 +13,7 @@ CodePath, Week 1. http://courses.codepath.com/courses/intro_to_ios/week/1#!modul
 * User sees error message when there's a networking error.
 * User can pull to refresh the movie list. 
 
-#### Optional (4 of 7)
+#### Optional (5 of 7)
 * All images fade in 
 * For the large poster, load the low-res image first, switch to high-res when complete 
 * Customize the navigation bar.
@@ -24,6 +24,14 @@ CodePath, Week 1. http://courses.codepath.com/courses/intro_to_ios/week/1#!modul
 * Must use Cocoapods.
 * Asynchronous image downloading must be implemented using the UIImageView category in the AFNetworking library.
 
-## Remain optional (3 of 7)
+## Remain optional (2 of 7)
 * All images should be cached in memory and disk. In other words, images load immediately upon cold start (optional).
 * Add a search bar. (optional)
+
+
+## Video Walkthrough
+
+![Video Walkthrough](rotten-tomatoes-screencap.gif)
+
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
