@@ -4,6 +4,10 @@ Time spent: 6 hours.
 
 CodePath, Week 1. http://courses.codepath.com/courses/intro_to_ios/week/1#!module
 
+![Video Walkthrough](rotten-tomatoes-screencap.gif)
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 ## Implemented stories
 
 #### Required (5 fo 5)
@@ -28,10 +32,3 @@ CodePath, Week 1. http://courses.codepath.com/courses/intro_to_ios/week/1#!modul
 * All images should be cached in memory and disk. In other words, images load immediately upon cold start (optional).
 * Add a search bar. (optional)
 
-
-## Video Walkthrough
-
-![Video Walkthrough](rotten-tomatoes-screencap.gif)
-
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
